@@ -15,7 +15,8 @@ defmodule Rec.Groups.Group do
   @doc false
   def changeset(group, attrs) do
     group
-    |> cast(attrs, [:name, :description, :location, :num_of_players])
-    |> validate_required([:name, :description, :location, :num_of_players])
+    |> cast(attrs, [:sport_id, :name, :description, :location, :num_of_players])
+    |> cast_assoc(:sport)
+    |> validate_required([:sport_id, :name, :description, :location, :num_of_players])
   end
 end

@@ -19,6 +19,7 @@ defmodule Rec.Groups do
   """
   def list_groups do
     Repo.all(Group)
+    |> Repo.preload(:sport)
   end
 
   @doc """
@@ -35,7 +36,10 @@ defmodule Rec.Groups do
       ** (Ecto.NoResultsError)
 
   """
-  def get_group!(id), do: Repo.get!(Group, id)
+  def get_group!(id) do
+    Repo.get!(Group, id)
+    |> Repo.preload(:sport)
+  end
 
   @doc """
   Creates a group.

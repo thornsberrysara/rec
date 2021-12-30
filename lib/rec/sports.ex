@@ -35,7 +35,10 @@ defmodule Rec.Sports do
       ** (Ecto.NoResultsError)
 
   """
-  def get_sport!(id), do: Repo.get!(Sport, id)
+  def get_sport!(id) do
+    Repo.get!(Sport, id)
+    |> Repo.preload(:groups)
+  end
 
   @doc """
   Creates a sport.

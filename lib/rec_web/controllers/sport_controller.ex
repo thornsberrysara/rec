@@ -28,7 +28,8 @@ defmodule RecWeb.SportController do
 
   def show(conn, %{"id" => id}) do
     sport = Sports.get_sport!(id)
-    render(conn, "show.html", sport: sport)
+    groups = Rec.Groups.list_groups()
+    render(conn, "show.html", sport: sport, groups: groups)
   end
 
   def edit(conn, %{"id" => id}) do
