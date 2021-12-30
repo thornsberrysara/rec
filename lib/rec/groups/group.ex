@@ -7,6 +7,7 @@ defmodule Rec.Groups.Group do
     field :location, :string
     field :name, :string
     field :num_of_players, :integer
+    belongs_to :sport, Rec.Sports.Sport
 
     timestamps()
   end

@@ -4,6 +4,7 @@ defmodule Rec.Sports.Sport do
 
   schema "sports" do
     field :sport_name, :string
+    has_many :groups, Rec.Groups.Group
 
     timestamps()
   end
