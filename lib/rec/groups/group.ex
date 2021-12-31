@@ -46,5 +46,6 @@ defmodule Rec.Groups.Group do
     group
     |> cast(attrs, [:sport, :name, :description, :location])
     |> validate_required([:sport, :name, :description, :location])
+    
   end
 end
