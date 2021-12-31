@@ -8,7 +8,7 @@ defmodule Rec.GroupsTest do
 
     import Rec.GroupsFixtures
 
-    @invalid_attrs %{description: nil, location: nil, name: nil, num_of_players: nil}
+    @invalid_attrs %{sport: nil}
 
     test "list_groups/0 returns all groups" do
       group = group_fixture()
@@ -21,13 +21,10 @@ defmodule Rec.GroupsTest do
     end
 
     test "create_group/1 with valid data creates a group" do
-      valid_attrs = %{description: "some description", location: "some location", name: "some name", num_of_players: 42}
+      valid_attrs = %{sport: :""}
 
       assert {:ok, %Group{} = group} = Groups.create_group(valid_attrs)
-      assert group.description == "some description"
-      assert group.location == "some location"
-      assert group.name == "some name"
-      assert group.num_of_players == 42
+      assert group.sport == :""
     end
 
     test "create_group/1 with invalid data returns error changeset" do
@@ -36,13 +33,10 @@ defmodule Rec.GroupsTest do
 
     test "update_group/2 with valid data updates the group" do
       group = group_fixture()
-      update_attrs = %{description: "some updated description", location: "some updated location", name: "some updated name", num_of_players: 43}
+      update_attrs = %{sport: :""}
 
       assert {:ok, %Group{} = group} = Groups.update_group(group, update_attrs)
-      assert group.description == "some updated description"
-      assert group.location == "some updated location"
-      assert group.name == "some updated name"
-      assert group.num_of_players == 43
+      assert group.sport == :""
     end
 
     test "update_group/2 with invalid data returns error changeset" do

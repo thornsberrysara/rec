@@ -3,11 +3,40 @@ defmodule Rec.Groups.Group do
   import Ecto.Changeset
 
   schema "groups" do
+    field :sport, Ecto.Enum,
+      values: [
+        :soccer,
+        :basketball,
+        :tennis,
+        :baseball,
+        :golf,
+        :running,
+        :volleyball,
+        :badminton,
+        :swimming,
+        :boxing,
+        :table_tennis,
+        :skiing,
+        :ice_skating,
+        :roller_skating,
+        :rugby,
+        :billiards,
+        :football,
+        :bowling,
+        :ice_hockey,
+        :snowboarding,
+        :skateboarding,
+        :cycling,
+        :archery,
+        :fishing,
+        :gymnastics,
+        :figure_skating,
+        :rock_climbing
+      ]
+
+    field :name, :string
     field :description, :string
     field :location, :string
-    field :name, :string
-    field :num_of_players, :integer
-    belongs_to :sport, Rec.Sports.Sport
 
     timestamps()
   end
@@ -15,8 +44,8 @@ defmodule Rec.Groups.Group do
   @doc false
   def changeset(group, attrs) do
     group
-    |> cast(attrs, [:sport_id, :name, :description, :location, :num_of_players])
-    |> cast_assoc(:sport)
-    |> validate_required([:sport_id, :name, :description, :location, :num_of_players])
+    |> cast(attrs, [:sport, :name, :description, :location])
+    |> validate_required([:sport, :name, :description, :location])
+    
   end
 end

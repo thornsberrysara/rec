@@ -3,10 +3,10 @@
 <table>
   <thead>
     <tr>
+      <th>Sport</th>
       <th>Name</th>
       <th>Description</th>
       <th>Location</th>
-      <th>Num of players</th>
 
       <th></th>
     </tr>
@@ -14,10 +14,10 @@
   <tbody>
 <%= for group <- @groups do %>
     <tr>
+      <td><%= group.sport %></td>
       <td><%= group.name %></td>
       <td><%= group.description %></td>
       <td><%= group.location %></td>
-      <td><%= group.num_of_players %></td>
 
       <td>
         <span><%= link "Show", to: Routes.group_path(@conn, :show, group) %></span>

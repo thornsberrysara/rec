@@ -11,8 +11,7 @@ defmodule RecWeb.GroupController do
 
   def new(conn, _params) do
     changeset = Groups.change_group(%Group{})
-    sports = Rec.Sports.list_sports()
-    render(conn, "new.html", changeset: changeset, sports: sports)
+    render(conn, "new.html", changeset: changeset)
   end
 
   def create(conn, %{"group" => group_params}) do

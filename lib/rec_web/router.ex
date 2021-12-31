@@ -88,7 +88,6 @@ defmodule RecWeb.Router do
     get "/users/confirm/:token", UserConfirmationController, :edit
     post "/users/confirm/:token", UserConfirmationController, :update
 
-    resources "/sports", SportController
     resources "/groups", GroupController
   end
 end

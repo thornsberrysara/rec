@@ -3,13 +3,13 @@
 <ul>
 
   <li>
-    <strong>Name:</strong>
-    <%= @group.name %>
+    <strong>Sport:</strong>
+    <%= @group.sport %>
   </li>
 
   <li>
-    <strong>Sport:</strong>
-    <%= @group.sport.sport_name %>
+    <strong>Name:</strong>
+    <%= @group.name %>
   </li>
 
   <li>
@@ -21,12 +21,6 @@
     <strong>Location:</strong>
     <%= @group.location %>
   </li>
-
-  <li>
-    <strong>Num of players:</strong>
-    <%= @group.num_of_players %>
-  </li>
-
 </ul>
 
 <span><%= link "Edit", to: Routes.group_path(@conn, :edit, @group) %></span> |

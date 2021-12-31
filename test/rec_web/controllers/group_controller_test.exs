@@ -3,9 +3,9 @@ defmodule RecWeb.GroupControllerTest do
 
   import Rec.GroupsFixtures
 
-  @create_attrs %{description: "some description", location: "some location", name: "some name", num_of_players: 42}
-  @update_attrs %{description: "some updated description", location: "some updated location", name: "some updated name", num_of_players: 43}
-  @invalid_attrs %{description: nil, location: nil, name: nil, num_of_players: nil}
+  @create_attrs %{sport: :""}
+  @update_attrs %{sport: :""}
+  @invalid_attrs %{sport: nil}
 
   describe "index" do
     test "lists all groups", %{conn: conn} do
@@ -55,7 +55,7 @@ defmodule RecWeb.GroupControllerTest do
       assert redirected_to(conn) == Routes.group_path(conn, :show, group)
 
       conn = get(conn, Routes.group_path(conn, :show, group))
-      assert html_response(conn, 200) =~ "some updated description"
+      assert html_response(conn, 200)
     end
 
     test "renders errors when data is invalid", %{conn: conn, group: group} do

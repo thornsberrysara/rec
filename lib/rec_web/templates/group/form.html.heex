@@ -5,9 +5,9 @@
     </div>
   <% end %>
 
-  <%= label f, :sport_id %>
-  <%= select(f, :sport_id, Enum.map(@sports, &{"#{&1.sport_name}", &1.id})) %>
-  <%= error_tag f, :sport_id %>
+  <%= label f, :sport %>
+  <%= select f, :sport, Ecto.Enum.values(Rec.Groups.Group, :sport), prompt: "Choose a value" %>
+  <%= error_tag f, :sport %>
 
   <%= label f, :name %>
   <%= text_input f, :name %>
@@ -20,10 +20,6 @@
   <%= label f, :location %>
   <%= text_input f, :location %>
   <%= error_tag f, :location %>
-
-  <%= label f, :num_of_players %>
-  <%= number_input f, :num_of_players %>
-  <%= error_tag f, :num_of_players %>
 
   <div>
     <%= submit "Save" %>
