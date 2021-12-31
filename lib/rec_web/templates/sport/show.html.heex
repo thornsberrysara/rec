@@ -1,0 +1,13 @@
+<h1>Show Sport</h1>
+
+<ul>
+
+  <li>
+    <strong>Sport name:</strong>
+    <%= @sport.sport_name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.sport_path(@conn, :edit, @sport) %></span> |
+<span><%= link "Back", to: Routes.sport_path(@conn, :index) %></span>
