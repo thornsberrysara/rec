@@ -11,14 +11,10 @@ defmodule Rec.GroupsFixtures do
     {:ok, group} =
       attrs
       |> Enum.into(%{
-<<<<<<< HEAD
-        sport: :""
-=======
+        sport: :"",
         description: "some description",
         location: "some location",
-        name: "some name",
-        num_of_players: 42
->>>>>>> master
+        name: "some name"
       })
       |> Rec.Groups.create_group()
 
