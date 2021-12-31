@@ -6,6 +6,20 @@ defmodule RecWeb.GroupControllerTest do
   @create_attrs %{sport: :""}
   @update_attrs %{sport: :""}
   @invalid_attrs %{sport: nil}
+  @create_attrs %{
+    description: "some description",
+    location: "some location",
+    name: "some name"
+  }
+  @update_attrs %{
+    description: "some updated description",
+    location: "some updated location",
+    name: "some updated name"
+  }
+  @invalid_attrs %{description: nil, location: nil, name: nil, num_of_players: nil}
+  @create_attrs %{sport: :""}
+  @update_attrs %{sport: :""}
+  @invalid_attrs %{sport: nil}
 
   describe "index" do
     test "lists all groups", %{conn: conn} do
@@ -55,6 +69,8 @@ defmodule RecWeb.GroupControllerTest do
       assert redirected_to(conn) == Routes.group_path(conn, :show, group)
 
       conn = get(conn, Routes.group_path(conn, :show, group))
+      assert html_response(conn, 200)
+      assert html_response(conn, 200) =~ "some updated description"
       assert html_response(conn, 200)
     end
 

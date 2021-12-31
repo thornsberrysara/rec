@@ -9,6 +9,8 @@ defmodule Rec.GroupsTest do
     import Rec.GroupsFixtures
 
     @invalid_attrs %{sport: nil}
+    @invalid_attrs %{description: nil, location: nil, name: nil, num_of_players: nil}
+    @invalid_attrs %{sport: nil}
 
     test "list_groups/0 returns all groups" do
       group = group_fixture()
