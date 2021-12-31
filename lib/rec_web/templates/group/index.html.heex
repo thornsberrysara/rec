@@ -1,0 +1,32 @@
+<h1>Listing Groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sport</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Location</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for group <- @groups do %>
+    <tr>
+      <td><%= group.sport %></td>
+      <td><%= group.name %></td>
+      <td><%= group.description %></td>
+      <td><%= group.location %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.group_path(@conn, :show, group) %></span>
+        <span><%= link "Edit", to: Routes.group_path(@conn, :edit, group) %></span>
+        <span><%= link "Delete", to: Routes.group_path(@conn, :delete, group), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Group", to: Routes.group_path(@conn, :new) %></span>

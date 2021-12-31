@@ -1,0 +1,28 @@
+<h1>Show Group</h1>
+
+<ul>
+
+  <li>
+    <strong>Sport:</strong>
+    <%= @group.sport %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @group.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @group.description %>
+  </li>
+
+  <li>
+    <strong>Location:</strong>
+    <%= @group.location %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.group_path(@conn, :edit, @group) %></span> |
+<span><%= link "Back", to: Routes.group_path(@conn, :index) %></span>
